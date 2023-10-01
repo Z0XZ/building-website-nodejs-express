@@ -1,5 +1,5 @@
-const fs = require('fs');
-const util = require('util');
+import fs from 'fs';
+import util from 'util';
 
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
@@ -7,7 +7,7 @@ const writeFile = util.promisify(fs.writeFile);
 /**
  * Logic for reading and writing feedback data
  */
-class FeedbackService {
+export default class FeedbackService {
   /**
    * Constructor
    * @param {*} datafile Path to a JSOn file that contains the feedback data
@@ -45,5 +45,3 @@ class FeedbackService {
     return JSON.parse(data);
   }
 }
-
-module.exports = FeedbackService;
